@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #333;
+  min-height: 100vh;
+}
+.nav {
+  position: relative;
+  width: 500px;
+  height: 100px;
+}
+.nav ul {
+  display: flex;
+}
+.nav ul li {
+  position: relative;
+  list-style: none;
+  width: 500px;
+  height: 100px;
+  z-index: 1;
+}
+.nav ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+.nav ul li a .icon {
+  position: relative;
+  line-height: 105px;
+  transition: 0.5s;
+  font-size: 40px;
+}
+.nav ul li a .text {
+  position: absolute;
+  font-size: 14px;
+  color: white;
+  bottom: 20px;
+  font-weight: 400;
+  transition: 0.25s;
+  transform: scale(0);
+}
+.nav ul li.active a .icon {
+  font-size: 30px;
+  transform: translateY(-10px);
+}
+.nav ul li:hover a .text {
+  transform: scale(1);
+}
+.nav ul li:nth-child(1).active ~ .indicator {
+  background-color: #1d9bf0;
+  box-shadow: 0 15px 25px #1d9bf0;
+  transform: translateX(calc(100px * 0));
+}
+.nav ul li:nth-child(2).active ~ .indicator {
+  background-color: #ff0000;
+  box-shadow: 0 15px 25px #ff0000;
+  transform: translateX(calc(100px * 1));
+}
+.nav ul li:nth-child(3).active ~ .indicator {
+  background-color: #07c160;
+  box-shadow: 0 15px 25px #07c160;
+  transform: translateX(calc(100px * 2));
+}
+.nav ul li:nth-child(4).active ~ .indicator {
+  background-color: #0076b4;
+  box-shadow: 0 15px 25px #0076b4;
+  transform: translateX(calc(100px * 3));
+}
+.nav ul li:nth-child(5).active ~ .indicator {
+  background-color: #999999;
+  box-shadow: 0 15px 25px #999999;
+  transform: translateX(calc(100px * 4));
+}
+.nav ul .indicator {
+  position: absolute;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
